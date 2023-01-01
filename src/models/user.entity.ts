@@ -8,20 +8,23 @@ import {
     BaseEntity,
 } from "typeorm";
 
-@Entity("users")
+@Entity("Visitante")
 export class User extends BaseEntity {
-    @PrimaryGeneratedColumn("increment")
-    id: number;
+    @PrimaryGeneratedColumn()
+    rut: number;
 
-    @Column()
-    username: string;
+    @Column({ type: "varchar", length: 50, nullable: false })
+    name: string;
 
-    @Column()
-    active: boolean;
+    @Column({ type: "varchar", length: 50, nullable: false })
+    lastname: string;
 
-    @CreateDateColumn()
-    created_at: Date;
+    @Column({ type: "varchar", length: 50, nullable: false })
+    email: string;
 
-    @UpdateDateColumn()
-    updated_at: Date;
+    @Column({ type: "varchar", length: 50, nullable: false })
+    number: string;
+
+    @Column({ type: "varchar", length: 50, nullable: false })
+    nationality: string;
 }

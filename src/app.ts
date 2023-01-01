@@ -4,6 +4,7 @@ import cors from "cors";
 
 //Import routes here
 import userRoutes from "./routes/user.routes";
+import guildRoutes from "./routes/guild.routes";
 
 const app = express();
 
@@ -13,6 +14,6 @@ app.use(express.json());
 
 //Use routes here
 app.use(userRoutes);
-
+app.use(guildRoutes);
 
 export default app;
