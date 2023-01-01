@@ -5,11 +5,12 @@ import {
     PrimaryGeneratedColumn,
     BaseEntity,
     ManyToOne,
+    PrimaryColumn,
 } from "typeorm";
 
 @Entity("Empresa")
 export class Company extends BaseEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryColumn({ type: "int", nullable: false })
     rutEmpresa: number;
 
     @Column({ type: "varchar", length: 45, nullable: false })
