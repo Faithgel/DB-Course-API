@@ -5,7 +5,6 @@ dotenv.config();
 
 const port = process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432;
 
-console.log("DB_HOST", process.env.DB_PORT);
 export const AppDataSource = new DataSource({
     type: "postgres",
     host: process.env.DB_HOST,
