@@ -1,4 +1,4 @@
-import { Guild } from './guild.entity';
+import { Guild } from "./guild.entity";
 import {
     Entity,
     Column,
@@ -31,6 +31,6 @@ export class Company extends BaseEntity {
     @Column({ type: "varchar", length: 90, nullable: false })
     ubicacionTerritorial: string;
 
-    @ManyToOne(()=> Guild , (guild) => guild,{nullable: false})
+    @ManyToOne(() => Guild, (guild) => guild, { nullable: false })
     id: Guild;
 }

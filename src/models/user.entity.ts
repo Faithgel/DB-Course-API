@@ -1,12 +1,4 @@
-import {
-    Entity,
-    Column,
-    PrimaryGeneratedColumn,
-    OneToMany,
-    CreateDateColumn,
-    UpdateDateColumn,
-    BaseEntity,
-} from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 
 @Entity("Visitante")
 export class User extends BaseEntity {
