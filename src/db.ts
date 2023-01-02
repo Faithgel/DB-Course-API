@@ -1,12 +1,18 @@
 import { DataSource } from "typeorm";
+import * as dotenv from "dotenv";
 
+dotenv.config();
+
+const port = process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432;
+
+console.log("DB_HOST", process.env.DB_PORT);
 export const AppDataSource = new DataSource({
     type: "postgres",
-    host: "containers-us-west-127.railway.app",
-    port: 5762,
-    username: "postgres",
-    password: "zACWIPIBmfES9F3AoO7V",
-    database: "railway",
+    host: process.env.DB_HOST,
+    port: port,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     synchronize: true,
     logging: true,
     entities: ["src/models/**/*.ts"],
